@@ -1,0 +1,19 @@
+void reversePrint(SinglyLinkedListNode* llist) {
+    SinglyLinkedListNode *prev,*current,*next;
+    current=llist;
+    prev=next=NULL;
+    while(current!=NULL){
+        next=current->next;
+        current->next=prev;
+        prev=current;
+        current=next;
+    }
+    llist=prev;
+    next=prev;
+    while(next!=NULL){
+        printf("%d \n",next->data);
+        next=next->next;
+    }
+    
+    
+}
