@@ -1,0 +1,16 @@
+SinglyLinkedListNode* removeDuplicates(SinglyLinkedListNode* llist) {
+  SinglyLinkedListNode *temp,*del,*temp1;
+  temp=llist;
+  del=temp->next;
+  
+  while(del!=NULL){
+      if(temp->data==del->data){
+          temp->next=del->next;
+          del=del->next;
+      }
+      else{
+          temp=temp->next;
+      }
+  }
+   return  llist;
+}
