@@ -1,0 +1,18 @@
+DoublyLinkedListNode* reverse(DoublyLinkedListNode* llist) {
+   DoublyLinkedListNode *t=llist,*temp,*prev=NULL;
+   while(t->next!=NULL){
+       t=t->next;
+   }
+   llist=t;
+   while(t!=NULL){
+       temp=t->prev;
+       t->prev=prev;
+       t->next=temp;
+       prev=t;
+       t=temp;
+   }
+   return llist;
+   
+   
+   
+}
